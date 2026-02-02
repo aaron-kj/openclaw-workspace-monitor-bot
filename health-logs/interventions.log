@@ -1,0 +1,19 @@
+# Intervention Log
+
+**Purpose:** Track all automated interventions and recovery actions  
+**Created:** 2026-02-02 15:14 JST
+
+---
+
+## Format
+```
+[YYYY-MM-DD HH:MM:SS JST] <Issue> | <Action> | <Result>
+```
+
+---
+
+## Log Entries
+
+*Interventions will be logged here by Quick Health Check cron job*
+
+---

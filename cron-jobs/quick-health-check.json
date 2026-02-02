@@ -1,0 +1,14 @@
+{
+  "name": "Quick Health Check (every 3 min)",
+  "schedule": {
+    "kind": "every",
+    "everyMs": 180000
+  },
+  "payload": {
+    "kind": "agentTurn",
+    "message": "Quick health check: 1) Check Telegram channel status via `openclaw status`. 2) Ping JoJo via sessions_send to verify responsiveness (timeout 10s). 3) If Telegram is ERROR/STOPPED or JoJo unresponsive, auto-restart gateway and log intervention to health-logs/interventions.log. 4) If all healthy, reply HEARTBEAT_OK.",
+    "timeoutSeconds": 60
+  },
+  "sessionTarget": "isolated",
+  "enabled": true
+}

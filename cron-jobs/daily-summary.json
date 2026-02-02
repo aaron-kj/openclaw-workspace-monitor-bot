@@ -1,0 +1,18 @@
+{
+  "name": "Daily Summary Report (8:00 AM JST)",
+  "schedule": {
+    "kind": "cron",
+    "expr": "0 8 * * *",
+    "tz": "Asia/Tokyo"
+  },
+  "payload": {
+    "kind": "agentTurn",
+    "message": "Generate daily health summary for the past 24 hours. Include: 1) Channel health stats (Telegram uptime, any timeouts). 2) JoJo responsiveness metrics. 3) Gateway uptime and restarts. 4) System metrics (memory, disk, sessions). 5) Any interventions logged in health-logs/interventions.log. 6) Security status. 7) Recommendations. Save report to reports/daily-YYYY-MM-DD.md and deliver summary to Aaron.",
+    "deliver": true,
+    "channel": "telegram",
+    "to": "7503583145",
+    "timeoutSeconds": 120
+  },
+  "sessionTarget": "isolated",
+  "enabled": true
+}
