@@ -1,0 +1,43 @@
+# Security Audit - Training Exercise
+**Date:** 2026-02-02 15:11 JST  
+**Type:** Training audit
+
+## Summary
+- **CRITICAL:** 0 ❌
+- **WARN:** 2 ⚠️
+- **INFO:** 1 ℹ️
+
+## Findings
+
+### ⚠️ WARN: gateway.trusted_proxies_missing
+**Issue:** Reverse proxy headers are not trusted  
+**Impact:** gateway.bind is loopback and gateway.trustedProxies is empty  
+**Risk:** Local-client checks could be spoofed if Control UI exposed through reverse proxy  
+**Fix:** Set gateway.trustedProxies to proxy IPs or keep Control UI local-only  
+**Priority:** Low (if not using reverse proxy)
+
+### ⚠️ WARN: models.weak_tier
+**Issue:** Some configured models below recommended tiers  
+**Affected:** github-copilot/gpt-4o at agents.defaults.model.fallbacks  
+**Risk:** Smaller/older models more susceptible to prompt injection  
+**Fix:** Use latest top-tier models (GPT-5+, Claude 4.5+)  
+**Priority:** Medium
+
+### ℹ️ INFO: Attack surface summary
+- Groups: open=0, allowlist=1
+- tools.elevated: enabled
+- hooks: disabled
+- browser control: enabled
+
+## Assessment
+✅ **No critical issues**  
+⚠️ **2 warnings** - Both are configuration recommendations, not immediate threats  
+📝 **Recommendation:** Document these warnings for Aaron's review, but no urgent action required
+
+## Next Steps
+- Include in weekly security report
+- Monitor for any changes in threat level
+- Rerun audit with `--deep` flag during weekly checks
+
+---
+*Monitor Bot 👁️*
