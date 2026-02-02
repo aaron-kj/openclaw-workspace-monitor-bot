@@ -18,3 +18,5 @@
 
 ---
 [2026-02-02T06:34:28Z] JoJo unresponsive (timeout 10s). Telegram OK. Action: gateway restart.
+[2026-02-02 15:57:23 JST] JoJo unresponsive (timeout 10s). Auto-restarted gateway. Telegram was OK.
+2026-02-02 17:02:29 JST | INTERVENTION | JoJo unresponsive (timeout 10s) | Action: Gateway restart

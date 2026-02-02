@@ -6,7 +6,7 @@
   },
   "payload": {
     "kind": "agentTurn",
-    "message": "Quick health check: 1) Check Telegram channel status via `openclaw status`. 2) Ping JoJo via sessions_send to verify responsiveness (timeout 10s). 3) If Telegram is ERROR/STOPPED or JoJo unresponsive, auto-restart gateway and log intervention to health-logs/interventions.log. 4) If all healthy, reply HEARTBEAT_OK.",
+    "message": "SILENT health check (no messages unless problems found):\n\n1. Check Telegram channel status via `openclaw status` - look for ERROR/STOPPED\n2. Ping JoJo via sessions_send (10s timeout) to verify responsiveness\n3. Check gateway health (running, pid, state)\n\n**If ALL HEALTHY:** Reply with ONLY 'HEARTBEAT_OK' (nothing else)\n\n**If PROBLEMS FOUND:**\n- Auto-restart gateway if Telegram ERROR/STOPPED or JoJo unresponsive\n- Log intervention to health-logs/interventions.log with timestamp\n- Send alert to Aaron via Telegram (7503583145) with: issue detected, action taken, expected recovery time\n- Confirm recovery in next check cycle\n\n**Key rule:** Be silent when healthy, vocal only when intervening.",
     "timeoutSeconds": 60
   },
   "sessionTarget": "isolated",
