@@ -17,3 +17,4 @@
 *Interventions will be logged here by Quick Health Check cron job*
 
 ---
+[2026-02-02T06:34:28Z] JoJo unresponsive (timeout 10s). Telegram OK. Action: gateway restart.
